@@ -1,0 +1,15 @@
+cat <<EOF > ~/DevOps-K8s-Deployment/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx
+spec:
+  type: NodePort
+  selector:
+    app: my-nginx
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30283
+EOF
+
